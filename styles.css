@@ -738,7 +738,7 @@ body {
 
 @media screen and (max-width: 600px) {
     .about__menu {
-        gap: 20px;
+        gap: 1rem;
         /* margin: 0 auto; */
     }
 
