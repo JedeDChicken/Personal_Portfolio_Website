@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles__pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- <h1>Hello</h1> -->
+    <!-- Nav -->
+    <nav id="nav">
+        <div class="nav__container">
+            <a href="/" id="logo"><span id="logo__spc"></span>JD</a>  <!--Gradient?-->
+
+            <ul class="nav__menu">
+                <li class="nav__item">
+                    <a href="../index.html#hero" class="nav__links">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../index.html#projects" class="nav__links">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#attachments" class="nav__links">Attachments</a>
+                </li>
+                <span id="nav__spc"></span>
+                <li class="nav__btn">
+                    <!-- <button class="button3"><i class="fa-solid fa-angle-left"></i></button> -->
+                    <a href="#" class="button1"><i class="fa-solid fa-angle-left"></i></a>
+                </li>
+                <li class="nav__btn">
+                    <!-- <button class="button3"><i class="fa-solid fa-angle-right"></i></button> -->
+                    <a href="#" class="button1"><i class="fa-solid fa-angle-right"></i></a>
+                </li>
+                <li class="nav__btn">
+                    <button class="button2" id="button2"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div id="content">
+        <div class="content__container">
+            <div class="content__img--container">
+                <!-- <img src="../images/about1.jpg" id="content__img" alt=""><br> -->
+                <div id="content__img">
+                    <a href="#" class="button3"><span>Check Project</span></a>
+                    <a href="#" class="button4"><span>Source Code</span></a>
+                </div>
+            </div>
+
+            <div class="content__content">
+                <div class="content__content--grid1">
+                    <h1>Personal <span>Portfolio</span> Website</h1>
+                    <p>Hello! I'm John Danielle T Castor, 19, from Bulacan, Philippines. I'm a computer and programming enthusiast with interests in General Programming, Software Development, and Artificial 
+                        Intelligence. My journey began in high school when my passion for using modern technology in solving problems took off, particularly when we developed an Augmented Reality-based solution 
+                        for teaching the cell cycle. From here, I decided to pursue a degree in Computer Engineering, where I learned the various and essential technological fields and concepts, and honed my 
+                        critical thinking and creativity for developing useful and efficient solutions. During my free time, I enjoy exploring new technologies and expanding my skillset, as well as producing 
+                        music, brewing coffee, and exercising.
+                    </p>
+                </div>
+
+                <div class="content__content--grid2">
+                    <div class="content__menu">
+                        <p class="content__links active" onclick="opentab1('materials', event)">Materials</p>
+                        <p class="content__links" onclick="opentab1('references', event)">References</p>
+                    </div>
+
+                    <div class="content__links--contents active" id="materials">
+                        <ul>
+                            <li>Vanilla HTML</li>
+                            <li>Vanilla CSS</li>
+                            <li>Vanilla JS</li>
+                            <li>Vanilla HTML</li>
+                            <li>Vanilla CSS</li>
+                            <li>Vanilla JS</li>
+                            <li>Vanilla HTML</li>
+                            <li>Vanilla CSS</li>
+                            <li>Vanilla JS</li>
+                        </ul>
+                    </div>
+                    <div class="content__links--contents" id="references">
+                        <ul>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                            <li>YouTube</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attachments -->
+    <div id="attachments">
+        <h1>Attachments</h1>
+        
+        <div class="attachments__container">
+            <div class="attachments__content">
+                <img src="../images/about1.jpg" class="img1" alt=""><br>
+                <p>Caption</p>
+            </div>
+            <div class="attachments__content">
+                <img src="../images/about1.jpg" class="img1" alt=""><br>
+                <p>Caption</p>
+            </div>
+            <div class="attachments__content">
+                <img src="../images/about1.jpg" class="img1" alt=""><br>
+                <p>Caption</p>
+            </div>
+        </div>
+
+        <a href="#" class="attachments__btn"><span>Back to Top</span></a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="footer__container">
+            <p>JD 2024.</p>
+        </div>
+    </div>
+    
+    <script src="../app.js"></script>
+    <script src="https://kit.fontawesome.com/4f33ad795f.js" crossorigin="anonymous"></script>
+
+    <script>
+    var contents = document.getElementsByClassName("content__links--contents");
+
+    for (let content of contents) {
+        content.addEventListener('scroll', () => {
+            console.log('Scrolling...'); // Debugging
+            content.classList.add('scrolled');
+            
+            clearTimeout(content.scrollTimeout);  // Clear any existing timeouts
+            
+            content.scrollTimeout = setTimeout(() => {  // Set new timeout to remove 'scrolled' class
+                content.classList.remove('scrolled');
+            }, 100);  // Delay
+        });
+    }
+    </script>
+</body>
+</html>

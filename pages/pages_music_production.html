@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles__pages.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- <h1>Hello</h1> -->
+    <!-- Nav -->
+    <nav id="nav">
+        <div class="nav__container">
+            <a href="/" id="logo"><span id="logo__left"></span>JD</a>  <!--Gradient?-->
+
+            <ul class="nav__menu1">
+                <li class="nav__item">
+                    <a href="../index.html#hero" class="nav__links">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../index.html#projects" class="nav__links">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#attachments" class="nav__links">Attachments</a>
+                </li>
+                <span id="nav__spc"></span>
+                <li class="nav__btns">
+                    <ul class="nav__menu2">
+                        <li class="nav__btn">
+                            <!-- <button class="button3"><i class="fa-solid fa-angle-left"></i></button> -->
+                            <a href="./pages_gns3.html" class="button1"><i class="fa-solid fa-angle-left"></i></a>
+                        </li>
+                        <li class="nav__btn">
+                            <!-- <button class="button3"><i class="fa-solid fa-angle-right"></i></button> -->
+                            <a href="./pages_music_box.html" class="button1"><i class="fa-solid fa-angle-right"></i></a>
+                        </li>
+                        <li class="nav__btn">
+                            <button class="button2" id="button2"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="nav__burger1">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div id="content">
+        <div class="content__container">
+            <div class="content__img--container">
+                <!-- <img src="../images/about1.jpg" id="content__img" alt=""><br> -->
+                <div class="content__img music_production">
+                    <div id="content__btns">
+                        <!-- <a href="#" class="button3"><span>Check Project</span></a> -->
+                        <a href="https://github.com/JedeDChicken/Music_Production" class="button3"><span>Repository</span></a>
+                        <!-- <a href="https://github.com/JedeDChicken/UART_FPGA" class="button3"><span>UART Repository</span></a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__content">
+                <div class="content__content--grid1">
+                    <h1><span>Music</span> Production</h1>
+                    <p>This repository includes my remakes of the instrumentals of famous songs. First, I extracted the vocals from the original tracks using 
+                        <a href="https://vocalremover.org/splitter-ai">Splitter AI</a> then layered the vocals on top of the remade instrumentals. These projects allowed me to apply 
+                        Digital Signal Processing (DSP) techniques especially when engineering sounds and synths (layering simple waveforms such as sine and saw waves using 
+                        synthesizers like Serum or Vital, an application of Fourier synthesis and Harmonics), and in mixing that involves signal chains incorporating key DSP concepts 
+                        such as compression, equalization/filtering, distortion, noise (like Additive Gaussian White Noise [AGWN]), modulation (for effects like chorus, phaser, and 
+                        delay), and convolution (for reverb).
+                    </p>
+                </div>
+
+                <div class="content__content--grid2">
+                    <div class="content__menu">
+                        <p class="content__links active" onclick="opentab1('materials', event)">Materials</p>
+                        <p class="content__links" onclick="opentab1('references', event)">References</p>
+                    </div>
+
+                    <div class="content__links--contents active" id="materials">
+                        <ul>
+                            <li>FL Studio 20</li>
+                            <li><a href="https://vocalremover.org/splitter-ai">Splitter AI at vocalremover.org</a></li>
+                            <li>OBS Studio</li>
+
+                        </ul>
+                    </div>
+                    <div class="content__links--contents" id="references">
+                        <ul>
+                            <li><a href="https://youtu.be/wufUX5P2Ds8">Cherry on Top - BINI</a></li>
+                            <li><a href="https://youtu.be/l9CZykYZkOQ">Touch - Katseye</a></li>
+                            <li>2 Tiktok Songs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attachments -->
+    <div id="attachments">
+        <h1>Attachments</h1>
+        
+        <div class="attachments__container">
+            <div class="attachments__content">
+                <a href="javascript:void(0)">
+                    <audio controls class="audio">
+                        <source src="../audios/Cherry on Top - BINI.mp3" type="audio/mp3">
+                        Your browser does not support the audio element
+                    </audio>
+                    <p><a href="https://github.com/JedeDChicken/Music_Production/blob/main/Cherry%20on%20Top%20-%20BINI.mp3" class="audio__links">Cherry on Top - BINI MP3</a></p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="javascript:void(0)">
+                    <audio controls class="audio">
+                        <source src="../audios/Touch - Katseye.mp3" type="audio/mp3">
+                        Your browser does not support the audio element
+                    </audio>
+                    <p><a href="https://github.com/JedeDChicken/Music_Production/blob/main/Touch%20-%20Katseye.mp3" class="audio__links">Touch - Katseye MP3</a></p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="javascript:void(0)">
+                    <audio controls class="audio">
+                        <source src="../audios/Tiktok.mp3" type="audio/mp3">
+                        Your browser does not support the audio element
+                    </audio>
+                    <p><a href="https://github.com/JedeDChicken/Music_Production/blob/main/Tiktok.mp3" class="audio__links">Tiktok MP3</a></p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="">
+                    <audio controls class="audio">
+                        <source src="../audios/Tiktok1.mp3" type="audio/mp3">
+                        Your browser does not support the audio element
+                    </audio>
+                    <p><a href="https://github.com/JedeDChicken/Music_Production/blob/main/Tiktok1.mp3" class="audio__links">Tiktok 2 MP3</a></p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Cherry%20on%20Top%20-%20BINI.mkv">
+                    <img src="../images/attachments/Video_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Cherry on Top - BINI MKV</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Touch%20-%20Katseye.mkv">
+                    <img src="../images/attachments/Video_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Touch - Katseye MKV</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Tiktok.mkv">
+                    <img src="../images/attachments/Video_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Tiktok MKV</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Tiktok1.mkv">
+                    <img src="../images/attachments/Video_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Tiktok 2 MKV</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Cherry%20on%20Top%20-%20BINI.flp">
+                    <img src="../images/attachments/FL_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Cherry on Top - BINI FLP</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Touch%20-%20Katseye.flp">
+                    <img src="../images/attachments/FL_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Touch - Katseye FLP</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Tiktok.flp">
+                    <img src="../images/attachments/FL_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Tiktok FLP</p>
+                </a>
+            </div>
+            <div class="attachments__content">
+                <a href="https://github.com/JedeDChicken/Music_Production/blob/main/Tiktok1.flp">
+                    <img src="../images/attachments/FL_Thumbnail_PNGWing.png" class="img1" alt=""><br>
+                    <p>Tiktok 2 FLP</p>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Lightbox Overlay -->
+        <div class="hidden" id="lightbox">
+            <!-- <button >&times;</button> -->
+            <i class="fa-solid fa-x" id="lightbox__close"></i>
+            <img src="" alt="Lightbox Image" id="lightbox__img">
+        </div>
+
+        <a href="#" class="attachments__btn"><span>Back to Top</span></a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="footer__container">
+            <p>JD 2024.</p>
+        </div>
+    </div>
+    
+    <script src="../app.js"></script>
+    <script src="https://kit.fontawesome.com/4f33ad795f.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Nav Media Query
+        const menu1 = document.querySelector('.nav__burger1'); //menu can be other variable name
+        const menuLinks1 = document.querySelector('.nav__menu1');
+
+        menu1.addEventListener('click', function() {
+            menu1.classList.toggle('active');   //Adds a class...
+            menuLinks1.classList.toggle('active');
+        })
+
+        // Scroll
+        let contents = document.getElementsByClassName('content__links--contents');
+
+        for (let content of contents) {
+            content.addEventListener('scroll', () => {
+                console.log('Scrolling...'); // Debugging
+                content.classList.add('scrolled');
+                
+                clearTimeout(content.scrollTimeout);  // Clear any existing timeouts
+                
+                content.scrollTimeout = setTimeout(() => {  // Set new timeout to remove 'scrolled' class
+                    content.classList.remove('scrolled');
+                }, 100);  // Delay
+            });
+        }
+
+        // Lightbox
+        // document.addEventListener('DOMContentLoaded', () => {
+        // Inits
+        const popups = document.querySelectorAll('.img__popup');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox__img');
+        const lightboxClose = document.getElementById('lightbox__close');
+        // let currentIndex = 0;
+        let zoom = 1;
+        let isDragging = false;  // Flag
+        let startX, startY;  // Start positions
+        let currentX = 0;
+        let currentY = 0;
+        
+        // Open
+        function openLightbox(index) {
+            const popup = popups[index];
+            const imgSrc = popup.querySelector('img').src;
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('visible');
+            // currentIndex = index;
+            zoom = 1;  // Reset
+            currentX = ((window.innerWidth / 2) - (lightboxImg.offsetWidth / 2));
+            currentY = ((window.innerHeight / 2) - (lightboxImg.offsetHeight / 2));
+            lightboxImg.style.left = `${currentX}px`;
+            lightboxImg.style.top = '0px';
+            lightboxImg.style.transform = `scale(${zoom})`;
+        }
+        
+        // Close
+        function closeLightbox() {
+            lightbox.classList.remove('visible');
+        }
+
+        // Zoom
+        lightboxImg.addEventListener('wheel', (e) => {
+            if (e.ctrlKey) {  // Ctrl+mousewheel
+                e.preventDefault();
+
+                if (e.deltaY < 0) {
+                    zoom += 0.1;  // Zoom in
+                }
+                else {
+                    zoom = Math.max(1, zoom - 0.1);  // Zoom out but limit to 1...
+                }
+
+                lightboxImg.style.transform = `scale(${zoom})`;
+            }
+        });
+
+        // Drag
+        lightboxImg.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+        });
+
+        lightboxImg.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                currentX = e.clientX - startX;
+                currentY = e.clientY - startY;
+                lightboxImg.style.left = currentX + 'px';
+                lightboxImg.style.top = currentY + 'px';
+
+                // Scroll
+                console.log('Scrolling...');
+                lightbox.classList.add('scrolled');
+                
+                clearTimeout(lightbox.scrollTimeout);
+                
+                lightbox.scrollTimeout = setTimeout(() => {
+                    lightbox.classList.remove('scrolled');
+                }, 100);
+            }
+        });
+        
+        lightboxImg.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        lightboxImg.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+        
+        // Event listeners
+        popups.forEach((popup, index) => {
+            popup.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLightbox(index);
+            });
+        });
+        
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        // Keyboard
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('visible')) return;
+            if (e.key == 'Escape') closeLightbox();
+        })
+    </script>
+</body>
+</html>

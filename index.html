@@ -1,0 +1,436 @@
+<!-- 
+To Dos: 
+*Fb privacy..., close button
+
+*Use px for img dimensions not % (% is %container...)
+*Snap scrolling, smooth scrolling?
+*Host in vercel
+
+*Finalize photos, contents, and media query
+*Img captions, alts
+
+*LinkedIn
+*Resume (Harvard Format) vs CV?
+*SSS, Pag-Ibig, PhilHealth, National ID, NBI Clearance; Passport
+*Datacamp Supervised Learning Activity
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD's Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- <h1>Hello</h1> -->
+    <div id="background"></div>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <div class="nav__container">
+            <a href="/" id="logo"><span class="logo__left"></span>JD</a>  <!--Gradient?-->
+
+            <ul class="nav__menu">
+                <li class="nav__item">
+                    <a href="#hero" class="nav__links">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__links">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projects" class="nav__links">Projects</a>
+                </li>
+                <!-- <li class="nav__item">
+                    <a href="/" class="nav__links">Resources</a>
+                </li> -->
+                <li class="nav__item">
+                    <a href="#contact" class="nav__links">Contact</a>
+                </li>
+                <li class="nav__btn">
+                    <button class="button2" id="button2"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                </li>
+            </ul>
+
+            <div class="nav__burger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero" id="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <h2>Hi, </h2>
+                <h1>I'm <span class="JD__text">JD Castor</span><br>a Computer Engineer</h1><br>
+                <!-- <button class="button1"><a href="/">Get in Touch</a></button> -->
+                <a href="#contact" class="button1"><span>Get in Touch</span></a>
+            </div>
+            <div class="hero__img">
+                <img src="images/background3.png" id="hero__img" alt="Graduation Picture">
+            </div>
+        </div>
+        <div class="hero__container--media"></div>
+    </div>
+
+    <!-- About -->
+    <div id="about">
+        <div class="about__container">
+            <div class="about__img--container">
+                <img src="images/about1.jpg" id="about__img" alt="Graduation Picture 2">
+            </div>
+
+            <div class="about__content">
+                <div class="about__grid1">
+                    <h1>About <span class="JD__text" id="JD__text">JD Castor</span></h1>
+                    <p>Hello! I'm John Danielle T Castor, 19, from Bulacan, Philippines. I'm a computer and programming enthusiast with interests in General Programming, Software Development, and Artificial 
+                        Intelligence. My journey began in high school when my passion for using modern technology in solving problems took off, particularly when we developed an Augmented Reality-based solution 
+                        for teaching the cell cycle. From here, I decided to pursue a degree in Computer Engineering, where I learned the various and essential technological fields and concepts, and honed my 
+                        critical thinking and creativity for developing useful and efficient solutions. During my free time, I enjoy exploring new technologies and expanding my skillset, as well as producing 
+                        music, brewing coffee, and exercising.
+                    </p>
+                </div>
+
+                <div class="about__img--container__media">
+                    <img src="images/about1.jpg" id="about__img--media" alt="Graduation Picture 2">
+                </div>
+                
+                <div class="about__grid2">
+                    <div class="about__menu">
+                        <p class="about__links active-link" onclick="opentab('knowledge', event)">Knowledge</p>  <!--Added onclick effects-->
+                        <!-- <p class="about__div">|</p> -->
+                        <p class="about__links" onclick="opentab('education', event)">Education</p>
+                        <p class="about__links" onclick="opentab('achievements', event)">Achievements</p>
+                    </div>
+    
+                    <div class="about__links--contents active-tab" id="knowledge">
+                        <ul>
+                            <li><span>General Programming</span><br>Data Structures, Algorithms, and OOP | Python</li>
+                            <li><span>IoT-based System Development</span><br>ESP32 and Arduino</li>
+                            <li><span>Fullstack Web Development</span><br>MERN, Vanilla, and Vercel</li>
+                            <li><span>Android Application Development</span><br>Unity</li>
+                            <li><span>AI-powered Application Development</span><br>Machine, Deep, and Transfer Learning</li>
+                            <li><span>FPGA Programming</span><br>Vivado</li>
+                        </ul>
+                    </div>
+                    <div class="about__links--contents" id="education">
+                        <ul>
+                            <li><span>2020-2024</span><br>BS Computer Engineering at UP Diliman</li>
+                            <li><span>2018-2020</span><br>Senior High School at Caloocan City Science High School</li>
+                            <li><span>2014-2018</span><br>Junior High School at Caloocan City Science High School</li>
+                        </ul>
+                    </div>
+                    <div class="about__links--contents" id="achievements">
+                        <ul>
+                            <li><span>Magna Cum Laude</span><br>BS Computer Engineering at UP Diliman</li>
+                            <li><span>Bronze Seal</span><br>Junior High School at Caloocan City Science High School</li>
+                            <li><span>IEEE TENCON 2024</span><br>Published Paper | Marina Bay Sands, Singapore</li>
+                            <li><span>Assistant Vice President</span><br>UP Engineering Radio Guild 2022 | SNL Committee</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects">
+        <h1>My Projects</h1>
+        <div class="projects__container">
+            <div class="projects__cards displayed">
+                <a href="/pages/pages_portfolio.html" class="projects__cards--link"></a>  <!-- a href="javascript:void(0)" --> 
+                <h2>This Personal Portfolio Website</h2>
+                <p>Vanilla HTML, CS, and JS</p>
+                <!-- <button><span>Explore Project</span></button> -->
+                <a href="/pages/pages_portfolio.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards displayed">
+                <a href="/pages/pages_air_monitoring.html" class="projects__cards--link"></a>
+                <h2>Air Monitoring System</h2>
+                <!-- <p>An IoT- and Wireless Sensor Network-based System for Monitoring Indoor and Outdoor Air Quality and Dispersion</p> -->
+                <p>IoT and Wireless Sensor Network</p>
+                <a href="/pages/pages_air_monitoring.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards displayed">
+                <a href="/pages/pages_titik_filipino.html" class="projects__cards--link"></a>
+                <h2>Larong Titik Filipino</h2>
+                <p>Unity at Android</p>
+                <a href="/pages/pages_titik_filipino.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_plant_cultivation.html" class="projects__cards--link"></a>
+                <h2>grEEEn Plant System</h2>
+                <!-- <p>An IoT-based Plant Monitoring and Cultivation System</p> -->
+                <p>IoT | STM32F411RE</p>
+                <a href="/pages/pages_plant_cultivation.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_haytechnayan.html" class="projects__cards--link"></a>
+                <h2>HAYtechNAYAN AR App</h2>
+                <p>AR | Unity, Vuforia, Blender, and Android</p>
+                <a href="/pages/pages_haytechnayan.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_story_generator.html" class="projects__cards--link"></a>
+                <h2>Story Generator AI Web App</h2>
+                <p>MERN and Gemini AI</p>
+                <a href="/pages/pages_story_generator.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_signup_login.html" class="projects__cards--link"></a>
+                <h2>Signup/Login Web App</h2>
+                <p>MERN and Bootstrap</p>
+                <a href="/pages/pages_signup_login.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_ambagong_bayani.html" class="projects__cards--link"></a>
+                <h2>AMBAGong Bayani Poster App</h2>
+                <p>Computer Vision</p>
+                <a href="/pages/pages_ambagong_bayani.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_imagenerator.html" class="projects__cards--link"></a>
+                <h2>Imagenerator AI App</h2>
+                <p>Computer Vision</p>
+                <a href="/pages/pages_imagenerator.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_waste_segregator.html" class="projects__cards--link"></a>
+                <h2>AI Waste Segregator</h2>
+                <p>Computer Vision and Transfer Learning</p>
+                <a href="/pages/pages_waste_segregator.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_handwriting_recognizer.html" class="projects__cards--link"></a>
+                <h2>AI Handwriting Recognizer</h2>
+                <p>Computer Vision</p>
+                <a href="/pages/pages_handwriting_recognizer.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_ray_tracing.html" class="projects__cards--link"></a>
+                <h2>Ray Tracing</h2>
+                <p>Optimization</p>
+                <a href="/pages/pages_ray_tracing.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_pseudo_rng.html" class="projects__cards--link"></a>
+                <h2>Pseudo RNG</h2>
+                <p>Assembly and ARMv7 | CPUlator</p>
+                <a href="/pages/pages_pseudo_rng.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_spi_uart.html" class="projects__cards--link"></a>
+                <h2>SPI and UART Communication</h2>
+                <p>FPGA and VHDL | Vivado</p>
+                <a href="/pages/pages_spi_uart.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_deobfuscator.html" class="projects__cards--link"></a>
+                <h2>Deobfuscator</h2>
+                <p>Python and Algorithms</p>
+                <a href="/pages/pages_deobfuscator.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_excel_automation.html" class="projects__cards--link"></a>
+                <h2>Excel Automation</h2>
+                <p>Python and Automation</p>
+                <a href="/pages/pages_excel_automation.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_data_strucs.html" class="projects__cards--link"></a>
+                <h2>Data Strucs and Algs</h2>
+                <p>Python</p>
+                <a href="/pages/pages_data_strucs.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_gns3.html" class="projects__cards--link"></a>
+                <h2>IPv4 Addressing and Routing</h2>
+                <p>Computer Networks | GNS3</p>
+                <a href="/pages/pages_gns3.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_music_production.html" class="projects__cards--link"></a>
+                <h2>Music Production</h2>
+                <p>Digital Signal Processing</p>
+                <a href="/pages/pages_music_production.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_music_box.html" class="projects__cards--link"></a>
+                <h2>Music Box</h2>
+                <p>General Electronics</p>
+                <a href="/pages/pages_music_box.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_custom_electric_guitar.html" class="projects__cards--link"></a>
+                <h2>Custom Electric Guitar</h2>
+                <p>General Electronics</p>
+                <a href="/pages/pages_custom_electric_guitar.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+            <div class="projects__cards">
+                <a href="/pages/pages_miscellaneous.html" class="projects__cards--link"></a>
+                <h2>Miscellaneous</h2>
+                <p>Codes and Projects</p>
+                <a href="/pages/pages_miscellaneous.html" class="projects__cards--btn"><span>Explore Project</span></a>
+            </div>
+
+        </div>
+        <div class="projects__btns">
+            <a href="#projects__end" class="projects__btn" id="see__more"><span>See More</span></a>
+            <a href="#projects" class="projects__btn"><span>Back to 1st Project</span></a>
+        </div>
+
+        <!-- Hidden section at end of Project Section -->
+        <div id="projects__end" style="height: 1px; visibility: hidden; scroll-margin-top: 100vh;"></div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact">
+        <div class="contact__container">
+            <div class="contact__info">
+                <h1>Contact <span class="JD__text">JD Castor</span></h1>
+                <a href="mailto:daniellecastor071@gmail.com"><i class="fa-solid fa-envelope"></i><span class="contact__text">daniellecastor071@gmail.com</span></a><br>
+                <a href="#" onclick="event.preventDefault()"><i class="fa-solid fa-square-phone"></i><span class="contact__text">0905 477 1660</span></a><br>
+                <a href="https://facebook.com/jedecastor"><i class="fa-brands fa-square-facebook"></i></i><span class="contact__text">JD Castor</span></a><br>
+                <a href="#"><i class="fa-brands fa-linkedin"></i><span class="contact__text">LinkedIn</span></a><br>
+                <a href="https://github.com/JedeDChicken"><i class="fa-brands fa-square-github"></i><span class="contact__text">GitHub</span></a><br>
+            </div>
+
+            <div class="contact__forms">
+                <form id="contact__forms--form" name="submit-to-g__form">
+                    <input type="text" class="contact__forms--name" id="coogle-sheet" id="contactontact__form--name" name="Name" placeholder="Name" required>
+                    <input type="text" class="contact__forms--name" id="contact__form--email" name="Email" placeholder="Email" required>
+                    <!-- <input type="text" id="contact__forms--message" placeholder="Message" required><br> -->
+                    <textarea name="Message" id="contact__form--message" rows="6" placeholder="Message"></textarea>
+                    <button type="submit" id="contact__form--button"><span>Send</span></button>
+                </form>
+                <span id="contact__confirm"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="footer__container">
+            <p>JD 2024.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/4f33ad795f.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- 
+Notes
+*https://youtu.be/WbnCll6vvw4
+    *Div- block container to group elements for styling purposes, takes the entire width
+    *Span- inline container to group elements for styling purposes
+    *Nav/main?- Semantic Containers/Elements...
+
+*https://youtu.be/SHIMUoAJHYU
+    *Class- 
+    *ID- for elements that appears once
+
+*https://youtu.be/9T8uxp5hQ60
+    *Displays in CSS
+        *Display- property that specifies if/how an element is displayed
+            *Visibility
+        *Block-level- start on a new line, takes up the full width available
+            (h1, p, div, form, header, footer)
+        *Inline-level- doesn't start on a nl, width is limited to what's needed
+            (span, a, img)
+            *Can't apply width/height to these elements
+        *Inline-block- like inline but can use width/height
+
+*https://youtu.be/K74l26pE4YA
+    *Flexbox- flexible way to layout items as either column/row
+    *Default- flex-direction: row;
+        *Row- main axis is horizontal, cross axis is vertical
+        *Start at upper left
+        *If columns- main and cross axes are swapped
+    *Item width
+    *flex: ;
+    *justify-content: flex-start/space-evenly/space-between/flex-end; (horizontal)
+    *align-items: ; (vertical)
+
+*display: grid;?
+*https://youtu.be/uuOXPWCh-6o
+    *Grid lines- invisible lines that divide column and row
+        *Grid track- space bet 2 // lines
+        *Grid area- space bet 4 lines
+    *Start w/ a parent element that serves as container
+        *Then its children become automatically grid items
+    *Fractional unit
+    *grid-template-areas: ;
+        *Then tell asign children...
+    *grid-template-columns/row: ; (size...)
+    *gap: ; (space bet grid lines)
+    *align-items and justify-items
+    *Check minamx and repeat functions to avoid duplication on larger grids?
+
+*https://youtu.be/YEmdHbQBCSQ
+    *Positions in CSS
+        *Static- default, if the others- can use top, bottom, left, right, z-index properties to position elements...
+        *Relative- can change the position relative to its normal/static position
+        *Absolute- most important, element will be positioned to its nearest ancestor that has a specified position
+            *If none- positioned relative to the body
+            *Allows positioning elements inside other elements, e.g. search logo in searchbars
+            *Stack, z-index...
+        *Fixed- fixate the element to the window
+            *If scrollable then the element's always there
+            *The properties... are relative to the entire window
+            *Can use % values, Origin- top-left corner of element, Transform, Translate?
+        *Sticky- special, like normal element but inside a scrollable website/container
+            *But the moment the element hits a specified position then it will stick to that position like fixed element
+
+*Can't put a block-level tag inside a line-level tag
+*using href for navigation- goes to first element (of section)...
+
+*Shift+tab- moves tabs leftward
+*Shift+alt+down- copies downwards
+*Ctrl+B- hides left tab...
+*Ctrl+shift+`- terminal
+
+*Outline vs border
+*Animations
+*Responsive vs Adaptive
+
+Acknowledgements- 
+*https://github.com/jamiewilson/form-to-google-sheets
+
+*Deployment ID- AKfycbzmLKYgiyiwubAKiA6MiaJEqCfOw0dMcpDcgvJxCvsLTgNf7RwlVYVL47A1NSr-_yNS
+*URL- https://script.google.com/macros/s/AKfycbzmLKYgiyiwubAKiA6MiaJEqCfOw0dMcpDcgvJxCvsLTgNf7RwlVYVL47A1NSr-_yNS/exec
+
+*https://docs.google.com/spreadsheets/d/1ofGW-9R3op-V6vSxrqWzW8W-b41QKV7f3FUaeD7Kn3o/edit?gid=0#gid=0
+*https://script.google.com/u/0/home/projects/1LwpdKMVgbsqaCZwhRSfwL9UxgjMqlxf2XVQlN_MIkg7TWF6RSC3VoB5L/projecthistory
+-->
