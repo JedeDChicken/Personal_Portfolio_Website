@@ -685,6 +685,7 @@ body {
 .content__links--contents ul li {
     list-style: none;
     margin: 15px 0;
+    /* word-break: break-word; */
 }
 
 .content__links--contents ul li span {
