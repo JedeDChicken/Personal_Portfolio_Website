@@ -848,7 +848,7 @@ body {
     align-items: end;
     min-height: 525px; */
     width: 100%;
-    margin: 2rem 0;
+    /* margin: 2rem 0; */
     /* background-color: black; */
     /* padding: 0; */
 }
@@ -866,11 +866,12 @@ body {
 
 .attachments__content p {
     text-align: center;
-    margin: 2rem 0 0;
+    margin: 0 0 2rem;
     /* width: 400px; */
     /* height: auto; */
     /* word-wrap: break-word; */
-    padding: 25px;
+    /* padding: 25px; */
+    /* background-color: black; */
 }
 
 .img1 {
