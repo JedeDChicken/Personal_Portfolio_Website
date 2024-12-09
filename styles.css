@@ -862,7 +862,8 @@ body {
     color: #f7f9fb;
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
-    rgba(17, 17, 17, 0.6) 100%);
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('./images/cards/Personal_Portfolio_Website.png');
     background-size: cover;
     position: relative;
 }
