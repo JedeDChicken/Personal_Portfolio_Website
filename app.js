@@ -16,10 +16,12 @@ function opentab(tabname, event) {
 
     target = document.getElementById(tabname);
     target.classList.add("active-tab");
-    event.currentTarget.classList.add("active-link");  //event is deprecated?
+    event.currentTarget.classList.add("active-link");  // event is deprecated?
+    // event.currentTarget- the element the event handler (e.g. onclick) is attached to
+    // event.target- the actual element clicked
 };
 
-// Content
+// Content, @ pages_<project>.html
 let contentLinks = document.getElementsByClassName("content__links");
 let contentLinksContents = document.getElementsByClassName("content__links--contents");
 
@@ -34,28 +36,31 @@ function opentab1(tabname, event) {
 
     target = document.getElementById(tabname);
     target.classList.add("active");
-    event.currentTarget.classList.add("active");  //event is deprecated?
+    event.currentTarget.classList.add("active");
 };
 
 // Dark Mode
 // let theme = 'light';
 // Added persistence, prioritizes localStorage than system preference (device not browser)
+// localStorage (built-in browser storage, stays even after closing/reopening page)
+// windows.matchMedia (checks if CSS media query is true in JS)
 let theme = localStorage.getItem('theme');  // Check localStorage for theme, or fallback to system preference
 const toggles = document.getElementsByClassName('button2');
 // const toggle1 = document.getElementById('button2_1');
 const body = document.body;
 
 if (!theme) {  // If no theme found in LS
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;  // .matches- returns true/false
     theme = prefersDark ? 'dark' : 'light';  // If prefersDark is true then theme = 'dark'
     localStorage.setItem('theme', theme);  // Save
 }
 
-body.classList.toggle('dark__mode', theme === 'dark');  // Apply theme on page load
+body.classList.toggle('dark__mode', theme === 'dark');  // Apply theme on page load (depending on current theme), ('classname', condition)
 
 // Listen for and update system theme change...
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {  // Apply if theme is not manually set in LS
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {  // e- variable/param name used for event object (arbitrary, can be any...) that gets passed automatically to callback by addEventListener
+    // Callback- func that we pass into another func (so the other func can call it back later, if X happens then call this func)
+    if (!localStorage.getItem('theme')) {  // Apply if theme is not manually set in LS (and system switches theme...)
         theme = e.matches ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
         body.classList.toggle('dark__mode', theme === 'dark');
@@ -111,7 +116,7 @@ let count, cards_to_show;
 //     sessionStorage.removeItem('isExpanded');
 // }
 
-let isExpanded = sessionStorage.getItem('isExpanded') === 'true';  // Use sessionStorage rather than localStorage
+let isExpanded = sessionStorage.getItem('isExpanded') === 'true';  // Use sessionStorage (deleted when tab/window is closed) rather than localStorage
 if (isExpanded) {
     see_more_text.textContent = 'See Less';
 }
@@ -119,7 +124,7 @@ else {
     see_more_text.textContent = 'See More';
 }
 
-function cardsToShow() {
+function cardsToShow() {  // For responsive layout...
     const width = window.innerWidth;
     console.log(width);
 
@@ -158,12 +163,12 @@ window.addEventListener('resize', function() {
     updateCards();
 });
 
-see_more.addEventListener('click', (event) => {
-    // Prevent default link behavior
+see_more.addEventListener('click', (event) => {  // event or e
+    // Prevent default link behavior, no reload
     event.preventDefault();
 
     // Toggle text between See More and See Less
-    if (see_more_text.textContent.trim() === 'See More') {  //trim()- removes extra spaces around the text
+    if (see_more_text.textContent.trim() === 'See More') {  // trim()- removes extra spaces around the text
         see_more_text.textContent = 'See Less';
         isExpanded = true;
         // event.preventDefault();
@@ -177,7 +182,7 @@ see_more.addEventListener('click', (event) => {
     cardsToShow();
     updateCards();
 
-    sessionStorage.setItem('isExpanded', isExpanded.toString());
+    sessionStorage.setItem('isExpanded', isExpanded.toString());  // Becomes 'true' instead of true (bool)...
 });
 
 // window.onbeforeunload = () => {
@@ -185,30 +190,30 @@ see_more.addEventListener('click', (event) => {
 // };
 
 // Nav Media Query
-const menu = document.querySelector('.nav__burger'); //menu can be other variable name
+const menu = document.querySelector('.nav__burger');  // menu can be other variable name
 const menuLinks = document.querySelector('.nav__menu');
 
 menu.addEventListener('click', function() {
-    menu.classList.toggle('active');   //Adds a class...
+    menu.classList.toggle('active');  // Adds a class...
     menuLinks.classList.toggle('active');
 })
 
-// Background
+// Background- shifts bg img vertically so it lines up accordingly when window resizes...
 const background = document.querySelector('#background');
 const bg_section = document.querySelector('#hero');
 
-function getBGY() {
-    const bg_section_bottom = bg_section.getBoundingClientRect().bottom;
-    const bg_height = parseFloat(getComputedStyle(background).backgroundSize.split(' ')[1]);
+function getBGY() {  // Get BG Y position
+    const bg_section_bottom = bg_section.getBoundingClientRect().bottom;  // Distance from top of viewport to bottom edge of #hero
+    const bg_height = parseFloat(getComputedStyle(background).backgroundSize.split(' ')[1]);  // Gets CSS bg size (e.g. 100%), takes the 2nd value (height, split), then converts "200%" to 200 (parse)...
     // const y_percent = ((bg_section_bottom) / window.innerHeight) * 100;
 
-    const bg_y = bg_section_bottom - (window.innerHeight * bg_height / 100);
-    background.style.backgroundPositionY = `${bg_y}px`;
+    const bg_y = bg_section_bottom - (window.innerHeight * bg_height / 100);  // window.innerHeight- viewport height (in px), this calculates how much to shift bg img
+    background.style.backgroundPositionY = `${bg_y}px`;  // Sets the CSS property (to shift bg img)
     console.log(bg_y);
 }
 
-getBGY();
-window.addEventListener('resize', getBGY);
+getBGY();  // Run once immediately
+window.addEventListener('resize', getBGY);  // Run again when window is resized
 
 // Contact
 // Init
@@ -219,15 +224,15 @@ document.getElementById('contact__form').addEventListener('submit', e => {  // E
     e.preventDefault();  // Prevent default form submission
 
     // Google sheets and Email
-    const form = e.target;  // Get form element
+    const form = e.target;  // Get form element, the form that was submitted
     const contact_confirm = document.getElementById('contact__confirm');
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })  // fetch(), new FormData(form)- automatically collects all form fields
         .then(response => {
             contact_confirm.innerHTML = "Message sent successfully";
             console.log('Success', response);
             setTimeout(function() {
                 contact_confirm.innerHTML = ""
-            }, 3000);
+            }, 3000);  // 3s
             form.reset();
         })
         .catch(error => {

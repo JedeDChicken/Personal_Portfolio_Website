@@ -1,12 +1,13 @@
 /* 
-Palette
+Design System
+Palette (color)
     *#f7f9fb
     *#333333
     *#666666
     *#007bff
     *#b0bec5
     *#e0e0e0
-Font
+Typeface (font)
     *IBM Plex Sans
     *Inter
     *Monsterrat
@@ -24,7 +25,7 @@ Font
 */
 
 /* Variables */
-:root {  /*Global*/
+:root {  /* Global */
     --white: #f7f9fb;
     --black: #222222;
     --gray: #666666;
@@ -54,18 +55,18 @@ body.dark__mode {
 }
 
 * {
-    padding: 0;  /*Removes defaults*/
+    padding: 0;  /* Removes defaults */
     margin: 0;
-    box-sizing: border-box;  /*Easier calculations...*/
+    box-sizing: border-box;  /* Easier calculations... */
 }
 
 html {
-    scroll-behavior: smooth;  /*Is this OK?*/
+    scroll-behavior: smooth;  /* Is this OK? */
 }
 
 body {
     background-color: var(--white);
-    color: var(--black);  /*Text color*/
+    color: var(--black);  /* Text color */
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 18px;
     font-style: normal;
@@ -76,8 +77,8 @@ body {
 #background {
     background-image: url(images/UPD_Castor_Background.png);
     background-size: auto 80%;
-    background-repeat: no-repeat;  /*Prevents tiling*/
-    /* background-position: 100% 80px;  /*Anchor to right*/
+    background-repeat: no-repeat;  /* Prevents tiling */
+    /* background-position: 100% 80px;  /* Anchor to right */
     background-position-x: 100%;
     /* background-position-y: 70%; */
     height: 100%;
@@ -95,9 +96,9 @@ body {
     background-color: #222222;
     height: 80px;
     width: 100%;
-    z-index: 999;  /*Ensures that it's always on top, like z-axis*/
+    z-index: 999;  /* Ensures that it's always on top, like z-axis */
     padding: 0 50px;
-    /*position: sticky;  /*position: fixed overlaps w/ content, document flow...*/
+    /* position: sticky;  /* position: fixed overlaps w/ content, document flow... */
     position: fixed;
     top: 0;
 }
@@ -108,22 +109,22 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
-    max-width: 1500px;  /*For horizontal screen size...*/
+    max-width: 1500px;  /* For horizontal screen size... */
     z-index: 1;
-    margin: 0 auto;  /*Practice to horizontally center block-level elements...*/
+    margin: 0 auto;  /* Practice to horizontally center block-level elements... */
 }
 
 #logo {
     font-size: 2.3rem;
     font-weight: 700;
     text-decoration: none;
-    cursor: pointer;  /*Hand cursor- indicates that element is clickable, when hovered...*/
-    background-color: #007bff;  /*Just in case, even though we have linear gradient...*/
+    cursor: pointer;  /* Hand cursor- indicates that element is clickable, when hovered... */
+    background-color: #007bff;  /* Just in case, even though we have linear gradient... */
     background-image: linear-gradient(to right, #007bff 0%, #66b3ff 100%);
     background-size: 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
+    -webkit-background-clip: text;  /* -webkit- & -moz- are CSS vendor prefixes for experimental/browser-specific features */
+    -webkit-text-fill-color: transparent;  /* -webkit- chrome, safari, newer edge */
+    -moz-background-clip: text;  /* -moz- firefox */
     -moz-text-fill-color: transparent;
 }
 
@@ -146,7 +147,7 @@ body {
     /* display: inline-block; */
 }
 
-.nav__links::after {
+.nav__links::after {  /* Pseudo-element that inserts content after an element's content */
     content: '';
     height: 3px;
     width: 0;
@@ -157,7 +158,7 @@ body {
     transition: 0.2s;
 }
 
-.nav__links:hover::after {
+.nav__links:hover::after {  /* Applies ::after styles only when hovered */
     width: 100%;
 }
 
@@ -203,7 +204,7 @@ body {
     width: 100%;
 }
 
-.button2:hover i {
+.button2:hover i {  /* Change on hover */
     color: var(--black);
 }
 
@@ -212,7 +213,7 @@ body {
 }
 
 /* Nav Media Query- Responsive?... */
-@media screen and (max-width: 960px) {  /*Triggers at this max-width*/
+@media screen and (max-width: 960px) {  /* Triggers at this max-width, screen- targets screens (ignores print, speech, etc), apply only on screens w/ width 960px or smaller */
     #nav {
         padding: 0;
     }
@@ -246,7 +247,7 @@ body {
         transition: all 0.2s ease-in-out;
     }
 
-    .nav__burger.active .bar:nth-child(2) {  /*Animation effect, JS*/
+    .nav__burger.active .bar:nth-child(2) {  /* Animation effect, JS, targets the horizontal lines... */
         opacity: 0;
     }
 
@@ -267,15 +268,15 @@ body {
         background-color: #222222;
         height: 50vh;
         width: 100%;
-        z-index: 99;  /*Below the hamburger icon*/
+        z-index: 99;  /* Below the hamburger icon */
         position: absolute;
-        top: -1000px;  /*Ensures that it's hidden at first*/
+        top: -1000px;  /* Ensures that it's hidden at first, scroll down animation... */
         transition: all 0.35s ease;
         /* top: 100%; */
     }
 
     .nav__menu.active {
-        top: 100%;  /*Shows entire active menu*/
+        top: 100%;  /* Shows entire active menu */
         /* transition: all 0.35s ease; */
     }
 
@@ -319,8 +320,8 @@ body {
 
 .hero__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /*50/50...*/
-    /*justify-self: center;  /*Justify a box inside its container... */
+    grid-template-columns: 1fr 1fr;  /* 50/50... */
+    /* justify-self: center;  /* Justify a box inside its container... */
     align-items: center;
     /* height: calc(100vh - 80px); */
     /* height: 70vh; */
@@ -363,7 +364,7 @@ body {
     /* border: 3px;
     border-style: solid;
     border-color: #007bff; */
-    border-radius: 4px;  /*x2?*/
+    border-radius: 4px;  /* x2? of border-width?, */
     border: none;
     outline: none;
     padding: 14px 32px;
@@ -529,7 +530,7 @@ body {
 
 .about__container {
     /* display: grid;
-    grid-template-columns: 4fr 6fr;  /*fr- fraction of available space*/
+    grid-template-columns: 4fr 6fr;  /* fr- fraction of available space */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -781,6 +782,7 @@ body {
     padding: 80px 25px;
     /* scroll-margin-top: -70px; */
 
+    /* Diff bgs */
     /* Animated gradient */
     /* background: linear-gradient(90deg, #3498db, #9b59b6);
     background-size: 200% 200%;
@@ -843,7 +845,6 @@ body {
     /* background: url('your-image.jpg') no-repeat center center fixed;
     background-size: cover; */
 
-    
     background-color: var(--white);
     background-image: 
         linear-gradient(0deg, rgba(var(--black_r), var(--black_r), var(--black_r), 0.1) 1px, transparent 1px), /* Vertical lines */
@@ -865,7 +866,7 @@ body {
     grid-template-columns:repeat(auto-fill, minmax(400px, 1fr));
     justify-content: center;
     align-items: center;
-    /*flex-wrap: wrap;  /*Allows multi-lines...*/
+    /* flex-wrap: wrap;  /*Allows multi-lines... */
     max-width: 1500px;
     margin: 0 auto;
     gap: 2rem;
@@ -886,147 +887,147 @@ body {
     position: relative;
 }
 
-.projects__cards:nth-child(2) {  /*For the 2nd card*/
+.projects__cards:nth-child(2) {  /* For the 2nd card */
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Air_Monitoring_System.png');
 }
 
-.projects__cards:nth-child(3) {  /*For the 2nd card*/
+.projects__cards:nth-child(3) {  /* For the 3rd? card */
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Titik_Filipino_Game.png');
 }
 
-.projects__cards:nth-child(4) {  /*For the 2nd card*/
+.projects__cards:nth-child(4) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Plant_Cultivation_System.png');
 }
 
-.projects__cards:nth-child(5) {  /*For the 2nd card*/
+.projects__cards:nth-child(5) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/HAYtechNAYAN_App.png');
 }
 
-.projects__cards:nth-child(6) {  /*For the 2nd card*/
+.projects__cards:nth-child(6) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Story_Generator_Web_App.png');
 }
 
-.projects__cards:nth-child(7) {  /*For the 2nd card*/
+.projects__cards:nth-child(7) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Signup_Login_Web_App.png');
 }
 
-.projects__cards:nth-child(8) {  /*For the 2nd card*/
+.projects__cards:nth-child(8) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/AMBAGong_Bayani_Poster.png');
 }
 
-.projects__cards:nth-child(9) {  /*For the 2nd card*/
+.projects__cards:nth-child(9) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Imagenerator_App.png');
 }
 
-.projects__cards:nth-child(10) {  /*For the 2nd card*/
+.projects__cards:nth-child(10) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Waste_Segregator.png');
 }
 
-.projects__cards:nth-child(11) {  /*For the 2nd card*/
+.projects__cards:nth-child(11) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Handwriting_Recognizer.png');
 }
 
-.projects__cards:nth-child(12) {  /*For the 2nd card*/
+.projects__cards:nth-child(12) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Ray_Tracing.png');
 }
 
-.projects__cards:nth-child(13) {  /*For the 2nd card*/
+.projects__cards:nth-child(13) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Pseudo_RNG.png');
 }
 
-.projects__cards:nth-child(14) {  /*For the 2nd card*/
+.projects__cards:nth-child(14) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/SPI_and_UART_Communication.png');
 }
 
-.projects__cards:nth-child(15) {  /*For the 2nd card*/
+.projects__cards:nth-child(15) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Deobfuscator.png');
 }
 
-.projects__cards:nth-child(16) {  /*For the 2nd card*/
+.projects__cards:nth-child(16) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Excel_Automation.png');
 }
 
-.projects__cards:nth-child(17) {  /*For the 2nd card*/
+.projects__cards:nth-child(17) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Data_Strucs_and_Algs.png');
 }
 
-.projects__cards:nth-child(18) {  /*For the 2nd card*/
+.projects__cards:nth-child(18) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/GNS3_Network_Simulation.png');
 }
 
-.projects__cards:nth-child(19) {  /*For the 2nd card*/
+.projects__cards:nth-child(19) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Music_Production.png');
 }
 
-.projects__cards:nth-child(20) {  /*For the 2nd card*/
+.projects__cards:nth-child(20) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Music_Box1.png');
 }
 
-.projects__cards:nth-child(21) {  /*For the 2nd card*/
+.projects__cards:nth-child(21) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('./images/cards/Custom_Electric_Guitar1.png');
 }
 
-.projects__cards:nth-child(22) {  /*For the 2nd card*/
+.projects__cards:nth-child(22) {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
@@ -1243,7 +1244,7 @@ body {
     align-items: center;
     font-size: 18px;
     text-decoration: none;
-    border-radius: 4px;  /*x2?*/
+    border-radius: 4px;  /* x2? */
     border: none;
     outline: none;
     /* padding: 14px 32px; */

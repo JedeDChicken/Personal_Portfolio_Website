@@ -8,19 +8,19 @@ To Dos:
 *Use px for img dimensions not % (% is %container...)
 *Close button?
 
-*SSS, Pag-Ibig, PhilHealth, National ID, NBI Clearance; Passport
+*NBI Clearance; Passport
 *Datacamp Supervised Learning Activity
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  <!-- Boilerplate -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JD's Portfolio Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">  <!-- Ref to css file -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">  <!-- For fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
@@ -32,7 +32,7 @@ To Dos:
     <!-- Nav -->
     <nav id="nav">
         <div class="nav__container">
-            <a href="/" id="logo"><span class="logo__left"></span>JD</a>  <!--Gradient?-->
+            <a href="/" id="logo"><span class="logo__left"></span>JD</a>  <!-- Gradient? -->
 
             <ul class="nav__menu">
                 <li class="nav__item">
@@ -51,11 +51,11 @@ To Dos:
                     <a href="#contact" class="nav__links">Contact</a>
                 </li>
                 <li class="nav__btn">
-                    <button class="button2" id="button2"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                    <button class="button2" id="button2"><i class="fa-solid fa-circle-half-stroke"></i></button>  <!-- Diff ways to create buttons here... -->
                 </li>
             </ul>
 
-            <div class="nav__burger">
+            <div class="nav__burger">  <!-- Burger icon, 3 horiz lines -->
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -106,7 +106,7 @@ To Dos:
                 
                 <div class="about__grid2">
                     <div class="about__menu">
-                        <p class="about__links active-link" onclick="opentab('knowledge', event)">Knowledge</p>  <!--Added onclick effects-->
+                        <p class="about__links active-link" onclick="opentab('knowledge', event)">Knowledge</p>  <!-- Added onclick effects, calls JS func opentab and passing 'knowledge' and event -->
                         <!-- <p class="about__div">|</p> -->
                         <p class="about__links" onclick="opentab('education', event)">Education</p>
                         <p class="about__links" onclick="opentab('achievements', event)">Achievements</p>
@@ -305,11 +305,11 @@ To Dos:
 
         </div>
         <div class="projects__btns">
-            <a href="#projects__end" class="projects__btn" id="see__more"><span>See More</span></a>
+            <a href="#projects__end" class="projects__btn" id="see__more"><span>See More</span></a>  <!-- id-  -->
             <a href="#projects" class="projects__btn"><span>Back to 1st Project</span></a>
         </div>
 
-        <!-- Hidden section at end of Project Section -->
+        <!-- Hidden section at end of Project Section, add extra space -->
         <div id="projects__end" style="height: 1px; visibility: hidden; scroll-margin-top: 100vh;"></div>
     </div>
 
@@ -334,7 +334,7 @@ To Dos:
                     <textarea name="Message" id="contact__form--message" rows="6" placeholder="Message"></textarea>
                     <button type="submit" id="contact__form--button"><span>Send</span></button>
                 </form>
-                <span id="contact__confirm"></span>
+                <span id="contact__confirm"></span>  <!-- For form submission confirmation -->
             </div>
         </div>
     </div>
@@ -346,8 +346,8 @@ To Dos:
         </div>
     </div>
 
-    <script src="app.js"></script>
-    <script src="https://kit.fontawesome.com/4f33ad795f.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>  <!-- JS -->
+    <script src="https://kit.fontawesome.com/4f33ad795f.js" crossorigin="anonymous"></script>  <!-- Fontawesome favicons -->
 </body>
 </html>
 
