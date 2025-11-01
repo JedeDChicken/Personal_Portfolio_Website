@@ -2,6 +2,7 @@
 console.log('app.js is loaded on this page');
 
 // About
+// Can use event listener
 let aboutLinks = document.getElementsByClassName("about__links");
 let aboutLinksContents = document.getElementsByClassName("about__links--contents");
 
@@ -41,44 +42,55 @@ function opentab1(tabname, event) {
 
 // Dark Mode
 // let theme = 'light';
-// Added persistence, prioritizes localStorage than system preference (device not browser)
-// localStorage (built-in browser storage, stays even after closing/reopening page)
-// windows.matchMedia (checks if CSS media query is true in JS)
-let theme = localStorage.getItem('theme');  // Check localStorage for theme, or fallback to system preference
+// Added persistence, prioritizes localStorage (browser) than system preference (device)
+// windows.matchMedia- checks if CSS media query is true in JS
+// localStorage- built-in browser storage, stays even after closing/reopening page
+const body = document.body;
 const toggles = document.getElementsByClassName('button2');
 // const toggle1 = document.getElementById('button2_1');
-const body = document.body;
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-if (!theme) {  // If no theme found in LS
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;  // .matches- returns true/false
-    theme = prefersDark ? 'dark' : 'light';  // If prefersDark is true then theme = 'dark'
-    localStorage.setItem('theme', theme);  // Save
-}
+// Check localStorage for theme, or fallback to system preference
+// .matches- returns true/false
+let theme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
 
-body.classList.toggle('dark__mode', theme === 'dark');  // Apply theme on page load (depending on current theme), ('classname', condition)
+// Apply theme on page load (depending on current theme)
+// .toggle('<classname>', <condition>)
+body.classList.toggle('dark__mode', theme === 'dark');
+localStorage.setItem('theme', theme);
+
+// if (!theme) {  // If no theme found in LS
+//     const prefersDark = prefers_dark.matches;
+//     theme = prefersDark ? 'dark' : 'light';  // If prefersDark is true then theme = 'dark'
+//     localStorage.setItem('theme', theme);  // Save
+// }
 
 // Listen for and update system theme change...
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {  // e- variable/param name used for event object (arbitrary, can be any...) that gets passed automatically to callback by addEventListener
-    // Callback- func that we pass into another func (so the other func can call it back later, if X happens then call this func)
+// e- variable/param used for event object (arbitrary, can be any...) that gets passed automatically to callback by addEventListener
+// Callback- func that we pass into another func (so the other func can call it back later, if X happens then call this func)
+// Catch?...
+prefersDark.addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {  // Apply if theme is not manually set in LS (and system switches theme...)
         theme = e.matches ? 'dark' : 'light';
-        localStorage.setItem('theme', theme);
+        // localStorage.setItem('theme', theme);
         body.classList.toggle('dark__mode', theme === 'dark');
     }
 });
 
 for (const toggle of toggles) {
     toggle.addEventListener('click', () => {
-        console.log('click');
-        if (theme === 'light') {
-            body.classList.add('dark__mode');
-            theme = 'dark';
-        }
-        else {
-            body.classList.remove('dark__mode');
-            theme = 'light';
-        }
+        // console.log('click');
+        theme = theme === 'light' ? 'dark' : 'light';
+        body.classList.toggle('dark__mode', theme === 'dark');
         localStorage.setItem('theme', theme);
+        // if (theme === 'light') {
+        //     body.classList.add('dark__mode');
+        //     theme = 'dark';
+        // }
+        // else {
+        //     body.classList.remove('dark__mode');
+        //     theme = 'light';
+        // }
     });
 }
 
@@ -163,9 +175,9 @@ window.addEventListener('resize', function() {
     updateCards();
 });
 
-see_more.addEventListener('click', (event) => {  // event or e
+see_more.addEventListener('click', (e) => {  // event or e
     // Prevent default link behavior, no reload
-    event.preventDefault();
+    e.preventDefault();
 
     // Toggle text between See More and See Less
     if (see_more_text.textContent.trim() === 'See More') {  // trim()- removes extra spaces around the text
@@ -207,6 +219,8 @@ function getBGY() {  // Get BG Y position
     const bg_height = parseFloat(getComputedStyle(background).backgroundSize.split(' ')[1]);  // Gets CSS bg size (e.g. 100%), takes the 2nd value (height, split), then converts "200%" to 200 (parse)...
     // const y_percent = ((bg_section_bottom) / window.innerHeight) * 100;
 
+    // <Viewport top to hero bottom> - (<viewport height> * <parsed %height of bg img wrt. viewport>/100)
+    // <...> - (bg img height)
     const bg_y = bg_section_bottom - (window.innerHeight * bg_height / 100);  // window.innerHeight- viewport height (in px), this calculates how much to shift bg img
     background.style.backgroundPositionY = `${bg_y}px`;  // Sets the CSS property (to shift bg img)
     console.log(bg_y);

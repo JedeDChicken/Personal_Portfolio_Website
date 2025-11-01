@@ -863,7 +863,7 @@ body {
 
 .projects__container {
     display: grid;
-    grid-template-columns:repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     justify-content: center;
     align-items: center;
     /* flex-wrap: wrap;  /*Allows multi-lines... */
@@ -1191,7 +1191,7 @@ body {
 
 @media screen and (max-width: 480px) {
     .projects__container {
-        grid-template-columns:repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     }
 
     .projects__cards {
