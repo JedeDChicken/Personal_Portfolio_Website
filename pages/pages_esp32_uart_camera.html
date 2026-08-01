@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Electric Guitar</title>
+    <title>ESP32 UART Camera</title>
     <link rel="stylesheet" href="../styles__pages.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,11 +32,11 @@
                     <ul class="nav__menu2">
                         <li class="nav__btn">
                             <!-- <button class="button3"><i class="fa-solid fa-angle-left"></i></button> -->
-                            <a href="./pages_music_box.html" class="button1"><i class="fa-solid fa-angle-left"></i></a>
+                            <a href="./pages_custom_electric_guitar.html" class="button1"><i class="fa-solid fa-angle-left"></i></a>
                         </li>
                         <li class="nav__btn">
                             <!-- <button class="button3"><i class="fa-solid fa-angle-right"></i></button> -->
-                            <a href="./pages_esp32_uart_camera.html" class="button1"><i class="fa-solid fa-angle-right"></i></a>
+                            <a href="./pages_esp32_rc_car.html" class="button1"><i class="fa-solid fa-angle-right"></i></a>
                         </li>
                         <li class="nav__btn">
                             <button class="button2" id="button2"><i class="fa-solid fa-circle-half-stroke"></i></button>
@@ -58,27 +58,25 @@
         <div class="content__container">
             <div class="content__img--container">
                 <!-- <img src="../images/about1.jpg" id="content__img" alt=""><br> -->
-                <div class="content__img custom_electric_guitar">
+                <div class="content__img esp32_uart_camera">
                     <div id="content__btns">
                         <!-- <a href="#" class="button3"><span>Check Project</span></a> -->
-                        <a href="https://github.com/JedeDChicken/Custom_Electric_Guitar" class="button3"><span>Repository</span></a>
-                        <!-- <a href="https://github.com/JedeDChicken/UART_FPGA" class="button3"><span>UART Repository</span></a> -->
+                        <a href="https://github.com/Electronics-JedeDChicken/ESP32_UART-Camera_ESP-IDF" class="button3"><span>Repository</span></a>
+                        <a href="https://github.com/Electronics-JedeDChicken/ESP32_UART-Camera_ESP-IDF/tree/main/receiver" class="button3"><span>Receiver</span></a>
                     </div>
                 </div>
             </div>
 
             <div class="content__content">
                 <div class="content__content--grid1">
-                    <h1>Custom <span>Electric Guitar</span></h1>
-                    <p>This project is an exploration of electronic component selection and of how their combinations influence a physical manifestation of electronics, sound. Single 
-                        coil pickups are brighter and noisier than double coils (Humbuckers) that have two coils wired in opposite polarity to cancel noise out, thus single coils are 
-                        more in need of shielding like Faraday cage to reduce Radio Frequency (RF) interference and 60-cycle hum. The tone knob in an electric guitar (chose a 
-                        Stratocaster shape) involves a Low-Pass Filter (LPF) circuit whose cut-off frequency can be computed using 1/(2&pi;RC), so lower capacitor and resistor values 
-                        tend to yield a brighter tone (chose 0.022&mu;F and A500K &ohm;). 'A' pertains to Logarithmic taper that matches human hearing while 'B' is for Linear taper. 
-                        As lowering the volume knob causes an increase in impedance causing loss of high frequencies, a Duncan treble bleed circuit that consists a capacitor and a 
-                        resistor in parallel, creating a High-Pass Filter (HPF), is used. Different switches are utilized such as push-pull pots and 3-way Double-Throw-Double-Pole 
-                        (DPDT) on/on/on switches to achieve different pickup combinations and to split the two coils of the Dual Rail pickup, resulting to 27 unique tonal 
-                        possibilities. Due to financial constraints, the project has not yet been completed physically, but was reviewed by a guitar luthier, Mr. Zip Zoolander.
+                    <h1>ESP32 <span>UART Camera</span></h1>
+                    <p>This UART Camera allows users to click the button to take a photo then transfer and save it serially to another computer via UART. 
+                        This project utilizes a 10k&Omega; pull-up button w/ debounce and interrupt, and installed ISR (Interrupt Service Routine), instead of usual blocking polling. 
+                        FreeRTOS task, awaken by ISR, was also used for capturing the photos and sending UART header and image files. 
+                        A baudrate of 921600 was used for more throughput. The camera sensor was configured to be in auto mode. 
+                        This project features reliability by comparing received file sizes (from header) w/ the actual received image bytes, ACKs and NACKs, retransmissions (3 attempts), and timeouts.<br><br>
+
+                        Further implementation will use CRC (Cyclic Redundancy Check) and packetization of data to transmit. Further instructions are in the Github Repository.
                     </p>
                 </div>
 
@@ -90,22 +88,21 @@
 
                     <div class="content__links--contents active" id="materials">
                         <ul>
-                            <li>Wilkinson Alnico V M neck and middle pickups</li>
-                            <li>Wilkinson Dual Rail M bridge pickups</li>
-                            <li>2 A500K push-pull pots for master volume and tone</li>
-                            <li>3-way double-pole-double-throw (DPDT) on/on/on switch</li>
-                            <li>0.022uF capacitor</li>
-                            <li>Duncan treble bleed</li>
-                            <li>Copper shielding, mods, accessories</li><br>
-                            <li>OneNote</li>
+                            <li><strong>Hardware</strong></li>
+                            <li>ESP32-CAM CH340 HW818 w/ OV2640 camera sensor</li>
+                            <li>10k&Omega; pull-up resistor</li><br>
+
+                            <li><strong>Software</strong></li>
+                            <li>VSCode w/ ESP-IDF v6.0.2 extension</li>
+                            <li><a href="https://github.com/espressif/esp32-camera">esp32-camera library by Espressif Systems</a></li>
+                            <li>UART (Universal Asynchronous Receiver-Transmitter) Protocol Implementation</li>
                         </ul>
                     </div>
                     <div class="content__links--contents" id="references">
                         <ul>
-                            <li><a href="https://www.youtube.com/@GunsandGuitars">Guns and Guitars</a></li>
-                            <li><a href="https://www.youtube.com/@BrejaToneWorks">Breja Toneworks</a></li>
-                            <li><a href="https://guitarelectronics.com/guitar-wiring-resources/">guitarelectronics.com</a></li>
-                            <li>Luthier Zip Zoolander</li>
+                            <li><a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/index.html">ESP-IDF Official Documentation</a></li>
+                            <li><a href="https://youtu.be/J8zc8mMNKtc">ESP-IDF Getting Started</a></li>
+                            <li><a href="https://youtu.be/eot6COwCPF0">esp32-camera Implementation</a></li>
                         </ul>
                     </div>
                 </div>
@@ -120,8 +117,8 @@
         <div class="attachments__container">
             <div class="attachments__content">
                 <a href="#" class="img__popup" data-index="0">
-                    <img src="../images/attachments/Custom_Electric_Guitar1.png" class="img1" alt=""><br>
-                    <p>Schematic Drawing and Notes</p>
+                    <img src="../images/attachments/ESP32_UART-Camera.jpe" class="img1" alt=""><br>
+                    <p>ESP32_UART-Camera.jpe</p>
                 </a>
             </div>
         </div>

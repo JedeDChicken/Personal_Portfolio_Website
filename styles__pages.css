@@ -511,6 +511,27 @@ body {
     url('./images/cards/Custom_Electric_Guitar1.png');
 }
 
+.content__img.esp32_uart_camera {
+    background-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('./images/cards/ESP32_UART-Camera.png');
+}
+
+.content__img.esp32_rc_car {
+    background-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('./images/cards/ESP32_RC-Car.png');
+}
+
+.content__img.esp32_bt_clicker {
+    background-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%), 
+    url('./images/cards/ESP32_BT-Clicker.png');
+}
+
 .content__img.miscellaneous {
     background-image: linear-gradient(to bottom, 
     rgba(0,0,0,0) 0%, 
